@@ -1,0 +1,36 @@
+.top-title{
+	color:#004f59;
+	font-weight:400;
+	font-family:system-ui;
+	text-align: center;
+}
+.top-t{
+	margin-top: 10px;
+	color:#004f59;
+	font-weight:600;
+	font-family:system-ui;
+	text-align: center;
+	font-size: 35px;
+}
+.top-t-middle{
+	color:#004f59;
+	font-weight:600;
+	font-family:system-ui;
+	text-align: center;
+	font-size: 25px;
+}
+.page-header{
+	margin-left: 20px;
+}
+.login, .register{
+	border: 1px solid silver;
+		height: 180px;
+		margin-bottom: 15px;
+		border-radius: 5px;
+}
+.maza{
+	list-style-type: none;
+}
+ul li{
+	color:#0c6570;
+}

@@ -1,0 +1,30 @@
+.wrapper {
+    display: flex;
+    align-items: stretch;
+}
+
+#sidebar {
+    min-width: 250px;
+    max-width: 250px;
+
+}
+
+#sidebar.active {
+    margin-left: -250px;
+}
+
+
+#sidebar {
+    /* don't forget to add all the previously mentioned styles here too */
+    background: #85B3B8;
+    color: #ffffff;
+}
+
+
+
+#sidebar ul li a {
+    padding: 10px;
+    font-size: 1.4em;
+    display: block;
+    color:white;
+}

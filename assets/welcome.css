@@ -1,0 +1,36 @@
+.fab{
+	color: #22626B;
+	font-size:30px;
+	margin-left: 45px;
+}
+.fot-box{
+	margin-left: 70px;
+}
+h4{
+	text-align: center;
+}
+.contact-email{
+		margin-left: 45px;
+}
+.container{
+	margin: auto;
+}
+.slide{
+		width: 80%;
+		height: 50%;
+		margin: auto;
+		text-align: center;
+}
+.left{
+	width: 65%;
+	display: inline-block;
+}
+.right{
+	width: 30%;
+	display: inline-block;
+	vertical-align: top;
+}
+.mid-text{
+	color:rgb(45, 144, 94);
+}
+

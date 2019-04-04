@@ -1,0 +1,229 @@
+Delivered-To: robertadamkwasny@gmail.com
+Received: by 2002:a50:b044:0:0:0:0:0 with SMTP id i62csp8404280edd;
+        Tue, 4 Dec 2018 12:39:15 -0800 (PST)
+X-Google-Smtp-Source: AFSGD/WQjfE63Xglr7Q20BBStz898dZx8who8vOtqN1pqp/B8zVH3c9uAVgKf8/QNp9Ep2h3yh0h
+X-Received: by 2002:a17:906:198b:: with SMTP id g11-v6mr16957346ejd.166.1543955955329;
+        Tue, 04 Dec 2018 12:39:15 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1543955955; cv=none;
+        d=google.com; s=arc-20160816;
+        b=y53uYW7AVqOfX5O+n5iAikANBKBw/CexpkwFmG9PUzujJWwgUAXkxJS25WLMUeKrM7
+         erctU8vCcWPoP6QBh124v5B1gyPhJrTYexeA/1e2GdB2Wjkj5hDl1frZC82f/P7T9u+V
+         Q95vwymUt+7Wt5z7P3gy7PLLc9efeVlhuED7ibt39gPiAup7bl/tKqTOfTkkyC5KhReu
+         oaVdMhUoQhkDkJbqcp3SUCd7HIxxBk7E6Bx5dqzdnLbXLfp7WAAxvIj1hQQ8uGER/fBs
+         9hXwYFzevR4tFXGDyVhvgznqAiz+Uqr4IbH282nLL7qFZdNW3hKmQTMRyZVjzCMehcg7
+         UoOg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=feedback-id:date:bounces-to:mime-version:subject:message-id:to:from
+         :dkim-signature:dkim-signature;
+        bh=3lRuO8jmH4JJrkgnwUYmY70nfq1yH713eBk7dAMxfeg=;
+        b=0lOF+WYEBkPQHNkXnPq0cmXEkWlnGZoWR6JujzOYD0VIYARR8T8YHLJSXMxcX7uSaN
+         NCVIkU5Q5WUy6r40g7zFW3RtLnmg4R64SOJ3pON/vfiDRCEjobaQ2X3iywp4ki08Zyif
+         j9S/c4rGNyKGw/ScTDMivFSVIuf0bJGthchEYxsRWVJZQ8cDtCMgIxDbBlzAfBfLx4pU
+         lJqUyqtDg0KIQxeni9x/Tw9VqLeEymVw9lVfT8hvUBvgYYBIbO8PiLh3SECv6VSVlFmR
+         CRDuRh3+4QgZFtRnbf8UhJAaywajmmeVl03TPt87wT/C0lGvsnqUd40Aa3BOREgv4OVU
+         TLAQ==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@amazon.co.uk header.s=xzr7cjj46bvb5ib4fyyv5hcqwj7o5lx2 header.b=fPm+eljT;
+       dkim=pass header.i=@amazonses.com header.s=uku4taia5b5tsbglxyj6zym32efj7xqv header.b=r6lY8hf1;
+       spf=pass (google.com: domain of 201812042039147a97aaa8166f429db794166c6e50p0eu@bounces.amazon.co.uk designates 54.240.1.21 as permitted sender) smtp.mailfrom=201812042039147a97aaa8166f429db794166c6e50p0eu@bounces.amazon.co.uk;
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=amazon.co.uk
+Return-Path: <201812042039147a97aaa8166f429db794166c6e50p0eu@bounces.amazon.co.uk>
+Received: from a1-21.smtp-out.eu-west-1.amazonses.com (a1-21.smtp-out.eu-west-1.amazonses.com. [54.240.1.21])
+        by mx.google.com with ESMTPS id m24-v6si4664572ejz.248.2018.12.04.12.39.15
+        for <robertadamkwasny@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-RSA-AES128-SHA bits=128/128);
+        Tue, 04 Dec 2018 12:39:15 -0800 (PST)
+Received-SPF: pass (google.com: domain of 201812042039147a97aaa8166f429db794166c6e50p0eu@bounces.amazon.co.uk designates 54.240.1.21 as permitted sender) client-ip=54.240.1.21;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@amazon.co.uk header.s=xzr7cjj46bvb5ib4fyyv5hcqwj7o5lx2 header.b=fPm+eljT;
+       dkim=pass header.i=@amazonses.com header.s=uku4taia5b5tsbglxyj6zym32efj7xqv header.b=r6lY8hf1;
+       spf=pass (google.com: domain of 201812042039147a97aaa8166f429db794166c6e50p0eu@bounces.amazon.co.uk designates 54.240.1.21 as permitted sender) smtp.mailfrom=201812042039147a97aaa8166f429db794166c6e50p0eu@bounces.amazon.co.uk;
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=amazon.co.uk
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/simple;
+	s=xzr7cjj46bvb5ib4fyyv5hcqwj7o5lx2; d=amazon.co.uk; t=1543955954;
+	h=From:To:Message-ID:Subject:MIME-Version:Content-Type:Date;
+	bh=A80fw2KgvG1V9g3cQjAklAnXHEJxLxojNEkw79QDI8Y=;
+	b=fPm+eljTfMhmqwQF0H4QFiGGM6NhuNrdZni/oUCcVn9MVBYQ8JuBERPUtfHqpz/g
+	U4e1Dt7B8C9kpIwNG80muSxbqo9NTSZtOFX+nWlh66rDRydqygRpv0KQY1fp6BOw5jC
+	LpN9plt7dUJpr5l7tnJoDl7vHBsxBxBZCQMTxRRE=
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/simple;
+	s=uku4taia5b5tsbglxyj6zym32efj7xqv; d=amazonses.com; t=1543955954;
+	h=From:To:Message-ID:Subject:MIME-Version:Content-Type:Date:Feedback-ID;
+	bh=A80fw2KgvG1V9g3cQjAklAnXHEJxLxojNEkw79QDI8Y=;
+	b=r6lY8hf1HNzN+6wKh30yrfd+QgWWJm5vTBnVpQieXyRHM6Pvq5eupvlDhVxJjJpL
+	I0ArfwNLnfWiRJxACq2673vIAquXn4G3P8oKoZ83AwR3BHgKRz0amdlz4xt1LqKPqBk
+	AWPr0+oZC7uGqH3+mMO+uG+UfPD1FUwZR0hidI3Q=
+From: "Amazon.co.uk" <account-update@amazon.co.uk>
+To: robertadamkwasny@gmail.com
+Message-ID: <010201677af23c7f-b44dd46d-6fed-4519-9444-1547b4f3d61e-000000@eu-west-1.amazonses.com>
+Subject: Your Amazon verification code
+MIME-Version: 1.0
+Content-Type: multipart/alternative; 
+	boundary="----=_Part_18466868_2138126767.1543955954813"
+X-AMAZON-MAIL-RELAY-TYPE: notification
+Bounces-to: 201812042039147a97aaa8166f429db794166c6e50p0eu@bounces.amazon.co.uk
+X-AMAZON-METADATA: CA=C24G4EYYM7UDDE
+X-Original-MessageID: <urn.rtn.msg.201812042039147a97aaa8166f429db794166c6e50p0eu@1543955954813.rtn-svc-eu-back-m4l1c-9702d468.eu-west-1.amazon.com>
+Date: Tue, 4 Dec 2018 20:39:14 +0000
+X-SES-Outgoing: 2018.12.04-54.240.1.21
+Feedback-ID: 1.eu-west-1.UIAUrMfbpGrxavqnRE0yoZrAUBI9C7GRNUx/kUDo6B4=:AmazonSES
+
+------=_Part_18466868_2138126767.1543955954813
+Content-Type: text/html; charset=utf-8
+Content-Transfer-Encoding: 7bit
+
+
+  <html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <style type="text/css">
+body {
+    margin:0;
+    color:#333;
+}
+
+a {
+    text-decoration:none;
+    color:#006699;
+}
+
+p {
+    margin:0px;
+}
+
+img {
+    border:0;
+    margin:0;
+}
+
+/* container */
+#container {
+    width:540px;
+    margin:0 auto;
+}
+
+#content {
+    width:500px;
+    margin:0 20px;
+}
+
+/* header */
+#header {
+    border-bottom:1px solid #eaeaea;
+    padding-top:10px;
+    padding-left:0px;
+    padding-right:0px;
+    padding-bottom:10px;
+}
+
+#title p{
+    font-size:20px;
+    font-family: "arial", "sans-serif";
+}
+
+#amazonLogo{
+    width:107px;
+    height:31px;
+}
+
+/* verification msg */
+#verificationMsg {
+    padding-left:0;
+    padding-top:9px;
+    padding-bottom:9px;
+}
+
+#verificationMsg p {
+    font-size:14px;
+    font-family: "arial", "sans-serif";
+}
+
+#verificationMsg .otp {
+    font-size:18px;
+    font-weight:bold;
+    padding-top:18px;
+}
+
+/* account security */
+#accountSecurity {
+    padding-left:0;
+    padding-top:9px;
+    padding-bottom:9px;
+}
+
+#accountSecurity p {
+    font-size:14px;
+    font-family: "arial", "sans-serif";
+}
+
+/* closing */
+#closing {
+    padding-left:0;
+    padding-top:9px;
+    padding-bottom:9px;
+}
+
+#closing p {
+    font-size:14px;
+    font-family: "arial", "sans-serif";
+}
+
+    </style>
+    <title></title>
+  </head>
+  <body><img width="1" height="1" src="https://www.amazon.co.uk/gp/r.html?C=4XBRCDY40J48&M=urn:rtn:msg:201812042039147a97aaa8166f429db794166c6e50p0eu&R=FJTH389BZK5Z&T=O&U=https%3A%2F%2Fimages-eu.ssl-images-amazon.com%2Fimages%2FG%2F01%2Fnav%2Ftransp.gif&H=AATRGMDPE8E1EI9VFIEQVAU9AG0A&ref_=pe_1764051_62581901_opens" />
+  <table align="center" cellspacing="0" id="container" cellpadding="0">
+    <tbody>
+    <tr>
+      <td>
+        <table cellspacing="0" id="content" cellpadding="0">
+          <tbody>
+          <tr>
+            <td id="header">
+              <table cellspacing="0" cellpadding="0">
+                <tbody>
+                <tr>
+                  <td width="250" id="logo">
+<img src="https://images-na.ssl-images-amazon.com/images/G/01/x-locale/cs/te/logo._CB152417367_.png" id="amazonLogo"/>                  </td>
+                  <td width="250" id="title" valign="top" align="right"><p></p></td>
+                </tr>
+                </tbody>
+              </table>
+            </td>
+          </tr>
+
+          <tr>
+            <td id="verificationMsg">
+              <p>Hello,<br/>We noticed that there was an attempt to sign in to your Amazon account. If you were prompted for a verification code, please enter the following to complete your sign-in.
+</p>
+              <p class="otp">585054</p>
+            </td>
+          </tr>
+
+          <tr>
+            <td id="accountSecurity">
+              <p>This code will expire in 10 minutes. 
+<br/><br/>
+If you did not try to sign in to your account, please change your password immediately by visiting your account settings on Amazon. We also recommend changing your password on other non-Amazon websites if you use the same password. 
+<br/><br/>
+If you have additional questions about account security, please visit amazon.co.uk/security. 
+              </p>
+            </td>
+          </tr>
+
+          <tr>
+            <td id="closing">
+              <p>Thanks for visiting Amazon!
+              </p>
+            </td>
+          </tr>
+          </tbody>
+        </table>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+  <img width="1" height="1" src="https://www.amazon.co.uk/gp/r.html?C=4XBRCDY40J48&M=urn:rtn:msg:201812042039147a97aaa8166f429db794166c6e50p0eu&R=2GWXWUNPPAXU8&T=E&U=https%3A%2F%2Fimages-eu.ssl-images-amazon.com%2Fimages%2FG%2F01%2Fnav%2Ftransp.gif&H=NNXIPLV6DNUDC3UE4RRTIJ80DKQA&ref_=pe_1764051_62581901_open" /></body>
+  </html>
+
+------=_Part_18466868_2138126767.1543955954813--

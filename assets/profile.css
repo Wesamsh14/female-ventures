@@ -1,0 +1,44 @@
+h4 {
+	text-align: center;
+
+}
+.titles {
+	text-align: center;
+	background-color: grey;
+	color: white;
+
+}
+.image {
+	text-align: center;
+	
+}
+.image img {
+
+	display: inline-block;
+	width: 200px;
+	height: 200px;
+	border-radius: 80%;
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: cover;
+	background-image: url(/assets/mateja.jpg);
+}
+.edit {
+	margin-bottom: 20px;
+	
+}
+
+.bio {
+	background-color: #73a3a5;
+	text-align: left;
+	width: 30%;
+	margin: 0 auto;	
+}
+.bio label {
+	color: white;
+	text-align: left;
+}
+.bio input, textarea {
+	float: center;
+}
+
